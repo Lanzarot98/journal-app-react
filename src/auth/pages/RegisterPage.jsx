@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Button, Grid, Link, TextField, Typography } from '@mui/material';
 import { AuthLayout } from '../layout/AuthLayout';
@@ -6,7 +7,7 @@ import { useForm } from '../../hooks';
 const formData = {
     email: 'luis@google.com',
     password: '123456',
-    displayName: 'Luis Miguel Rojas'
+    displayName: 'Luis Miguel Rojas',
 }
 
 const formValidations = {
@@ -17,6 +18,8 @@ const formValidations = {
 
 export const RegisterPage = () => {
 
+  const [formSubmitted, setFormSubmitted] = useState(false)
+
   const { 
     formState, displayName, email, password, onInputChange,
     isFormValid, displayNameValid, emailValid, passwordValid,
@@ -24,9 +27,9 @@ export const RegisterPage = () => {
 
   const onSubmit = ( event ) => {
     event.preventDefault();
+    setFormSubmitted(true);
     console.log(formState)
   }
-  console.log(displayNameValid);
 
   return (
     <AuthLayout title='Sign up'>
@@ -41,7 +44,7 @@ export const RegisterPage = () => {
                 name='displayName'
                 value={ displayName }
                 onChange={ onInputChange }
-                error={ !displayNameValid }
+                error={ !!displayNameValid && formSubmitted }
                 helperText={ displayNameValid }
               />
             </Grid>
@@ -55,6 +58,8 @@ export const RegisterPage = () => {
                 name='email'
                 value={ email }
                 onChange={ onInputChange }
+                error={ !!emailValid && formSubmitted }
+                helperText={ emailValid }
               />
             </Grid>
 
@@ -67,6 +72,8 @@ export const RegisterPage = () => {
                 name='password'
                 value={ password }
                 onChange={ onInputChange }
+                error={ !!passwordValid && formSubmitted }
+                helperText={ passwordValid }
               />
             </Grid>
             <Grid item xs={ 12 } sx={ { mt: 2 } }>
