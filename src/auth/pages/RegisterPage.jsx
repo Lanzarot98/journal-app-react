@@ -26,6 +26,7 @@ export const RegisterPage = () => {
     event.preventDefault();
     console.log(formState)
   }
+  console.log(displayNameValid);
 
   return (
     <AuthLayout title='Sign up'>
@@ -41,7 +42,7 @@ export const RegisterPage = () => {
                 value={ displayName }
                 onChange={ onInputChange }
                 error={ !displayNameValid }
-                helperText="Name is required"
+                helperText={ displayNameValid }
               />
             </Grid>
 
