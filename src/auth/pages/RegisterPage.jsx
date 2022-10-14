@@ -13,7 +13,7 @@ const formData = {
 }
 
 const formValidations = {
-  email: [ (value) => value.includes('@'), 'email must content an @.'],
+  email: [ (value) => value.includes('@'), 'Email must content an @.'],
   password: [ (value) => value.length >=6, 'Password must have more than 6 characters.'],
   displayName: [ (value) => value.length >=1, 'Name is required.'],
 }
