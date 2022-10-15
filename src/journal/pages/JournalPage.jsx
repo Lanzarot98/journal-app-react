@@ -1,6 +1,5 @@
 import { AddOutlined } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
-import { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { startNewNote } from '../../store/journal';
 import { JournalLayout } from '../layout/JournalLayout';
