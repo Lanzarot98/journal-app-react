@@ -21,8 +21,7 @@ export const NoteView = () => {
     }, [date])
 
     useEffect(() => {
-      dispatch( setActiveNote( formState ) )
-      
+      dispatch( setActiveNote( formState ) );
     }, [formState])
     
     const onSaveNote = () => {
@@ -43,8 +42,8 @@ export const NoteView = () => {
             <Grid item>
                 <Button 
                     onClick={ onSaveNote }
-                    color='primary' s
-                    x={{ padding: 2 }}
+                    color='primary'
+                    sx={{ padding: 2 }}
                 >
                     <SaveOutlined sx={{ fontSize: 30, mr: 1 }} />
                     Guardar
