@@ -1,14 +1,17 @@
 import { Box, Divider, Drawer, List, Toolbar, Typography } from '@mui/material';
+
 import { useSelector } from 'react-redux';
 import { SideBarItem } from './SideBarItem';
 
 export const SideBar = ({ drawerWidth }) => {
-
+    
     const { displayName } = useSelector( state => state.auth );
     const { notes } = useSelector( state => state.journal );
+    
 
     return (
         <Box
+            className='sideBar'
             component='nav'
             sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         >
