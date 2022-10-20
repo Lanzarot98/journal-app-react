@@ -21,7 +21,6 @@ export const singInWithGoogle = async() => {
 
     } catch (error) {
         // Handle Errors here.
-        const errorCode = error.code;
         const errorMessage = error.message;
         return {
             ok: false,
@@ -34,10 +33,10 @@ export const singInWithGoogle = async() => {
 export const registerUserWithEmailPassword = async({ email, password, displayName }) => {
 
     try {
-        console.log({email, password, displayName});
+        // console.log({email, password, displayName});
         const resp = await createUserWithEmailAndPassword(FirebaseAuth, email, password);
         const { uid, photoURL } = resp.user;
-        console.log(resp);
+        // console.log(resp);
         // TODO: actualizar el displayName en Firebase
         await updateProfile( FirebaseAuth.currentUser, {
             displayName
