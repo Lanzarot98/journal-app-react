@@ -20,7 +20,7 @@ export const NoteView = () => {
 
     const dateString = useMemo(() => {
         const newDate = new Date( date );
-        return newDate.toUTCString();
+        return newDate.toDateString();
     }, [date])
 
     const fileInputRef = useRef()
