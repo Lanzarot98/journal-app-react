@@ -10,8 +10,16 @@
 }
 
 
-/* @media (max-width: 600px) {
-    .sideBar {
-        display: none;
+@media (max-width: 600px) {
+    .drawer .MuiDrawer-paper{
+        display: contents; 
+        width: 200px;
     }
-} */
+    .css-qlz4m-MuiTypography-root {
+        text-align: center;
+    }
+    .css-1o5pq7n {
+        width: 170px;
+        margin-top: 50px;
+    }
+}

@@ -18,9 +18,10 @@ export const SideBar = ({ drawerWidth }) => {
             <Drawer
                 variant='permanent' //temporary
                 open
+                className='drawer'
                 sx={{
                     display: { xs: 'block' },
-                    '& .MuiDrawer-paper':  { boxSizing: 'border-box', width: drawerWidth }
+                    '& .MuiDrawer-paper':  { boxSizing: 'border-box', width: drawerWidth}
                 }}
             >
                 <Toolbar>
