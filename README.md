@@ -26,6 +26,7 @@ no pending updates
 ```
 sudo apt install yarn
 sudo npm install --location=global yarn
+sudo npm install -g yarn
 ```
 
 2. Create app:
