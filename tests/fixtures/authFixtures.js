@@ -31,5 +31,5 @@ export const demoUser = {
     email: 'demo@google.com',
     displayName: 'Demo User',
     photoURL: 'https://foto.jpg',
-    errorMessage: null
+    //errorMessage: null
 }
