@@ -44,7 +44,11 @@ export const LoginPage = () => {
 
   return (
     <AuthLayout title='Login'>
-      <form onSubmit={ onSubmit } className="animate__animated animate__fadeIn animate__faster">
+      {/* <h1>Hola Mundo: { import.meta.env.VITE_HOLA }</h1> */}
+      <form 
+        aria-label='submit-form'
+        onSubmit={ onSubmit }
+        className="animate__animated animate__fadeIn animate__faster">
           <Grid container>
             <Grid item xs={ 12 } sx={ { mt: 2 } }>
               <TextField 
@@ -66,7 +70,10 @@ export const LoginPage = () => {
                 type="password" 
                 placeholder="Password"
                 fullWidth
-                name="password" 
+                name="password"
+                inputProps={{
+                  'data-testid': 'password'
+                }} 
                 value={ password }
                 onChange={ onInputChange } 
                 error={ !!passwordValid && formSubmitted }
@@ -97,6 +104,7 @@ export const LoginPage = () => {
                   disabled={ isAuthenticating }
                   variant="contained" 
                   fullWidth 
+                  aria-label="google-btn"
                   onClick={ onGoogleSignIn }>
                   <Google />
                   <Typography sx={{ ml: 1 }}>Google</Typography>
